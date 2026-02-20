@@ -1,0 +1,193 @@
+/* Header Layout */
+.header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 120px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  /* Rich gradient background to differentiate from body */
+  background: linear-gradient(180deg, var(--darker-primary-color) 0%, var(--primary-color) 100%);
+  z-index: 1000;
+  padding: 0 40px; /* Add padding to sides instead of relying on margins */
+  box-sizing: border-box;
+  /* Modern Aesthetic Border & Glow */
+  box-shadow: 0 10px 30px -10px rgba(var(--accent-color-rgb), 0.3);
+  border-bottom: 3px solid var(--accent-color);
+  border-image: linear-gradient(90deg, var(--primary-color) 0%, var(--accent-color) 50%, var(--primary-color) 100%) 1;
+}
+
+/* Left Section: Logo */
+.headerLeft {
+  flex: 0 0 auto;
+}
+
+.headerLogo {
+  height: auto;
+  width: 150px;
+  display: block;
+}
+
+/* Centre Section: Tagline & Emoji */
+.headerCentre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Use gap for spacing */
+  flex: 1; /* Allow this section to grow */
+}
+
+.headerTag {
+  color: var(--white-color);
+  font-family: 'Macondo Swash Caps', cursive;
+  font-size: 26px;
+  text-transform: capitalize;
+  word-spacing: 5px;
+  text-align: center;
+}
+
+.headerEmojiContainer {
+  display: flex;
+  align-items: center;
+}
+
+.headerEmojiImg {
+  width: 140px; /* Increased from 100px */
+  height: auto;
+  object-fit: contain;
+}
+
+/* Right Section: Search */
+.headerRight {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.searchInput {
+  border: 1px solid var(--white-transparent-20);
+  height: 45px;
+  width: 220px;
+  padding: 0 20px;
+  border-radius: 50px;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background-color: var(--white-transparent-10);
+  color: var(--white-color);
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.searchInput::placeholder {
+  color: var(--white-transparent-60);
+  font-style: italic;
+}
+
+.searchInput:hover {
+  background-color: var(--white-transparent-20);
+  border-color: var(--white-transparent-40);
+}
+
+.searchInput:focus {
+  width: 300px; /* Expands smoothly */
+  background-color: var(--white-transparent-15);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 20px rgba(var(--accent-color-rgb), 0.3), inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.searchButton {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--darker-accent-color) 100%);
+  border: none;
+  padding: 0; /* Removed fixed padding for better control */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px; /* Slightly larger button */
+  height: 55px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.searchIcon {
+  height: 40px; /* Noticeably bigger icon */
+  width: 40px;
+  display: block;
+  filter: brightness(0) invert(1);
+  object-fit: contain;
+}
+
+.searchButton:hover {
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 6px 15px rgba(var(--accent-color-rgb), 0.5);
+  background: linear-gradient(135deg, var(--lighter-accent-color) 0%, var(--accent-color) 100%);
+}
+
+.searchButton:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 900px) {
+  .header {
+    height: auto;
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 15px;
+  }
+
+  .headerCentre {
+    text-align: center;
+    order: 2; /* Put tagline below logo */
+  }
+  
+  .headerTag {
+    font-size: 18px;
+    display: none; /* Hide tagline on very small screens if needed, or keep */
+  }
+
+  .headerRight {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .searchContainer {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .searchInput {
+    width: 100%; /* Full width search on mobile */
+  }
+  
+  .searchInput:focus {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .headerTag {
+    display: none; /* Hide text on phone to save space */
+  }
+  .headerLogo {
+    width: 160px;
+  }
+  .headerEmojiImg {
+    width: 80px;
+  }
+}

@@ -1,0 +1,172 @@
+/* FONTS
+font-family: 'Macondo Swash Caps', cursive; 
+
+color: #30006B;
+*/
+
+/* Scoping p reset to offersContainer to avoid global side effects if possible, 
+   or just keep it if that's the intention. 
+   Given the HTML had global p { margin: 0; padding: 0; }, I will replicate that behavior 
+   for the elements inside .offersContainer to be safe. */
+
+.offersContainer p {
+  margin: 0%;
+  padding: 0%;
+}
+
+.brandFont{
+  font-family: 'Macondo Swash Caps', cursive;
+  font-size: 30px;
+}
+
+/* Offers Main BOdy  */
+
+.offersContainer{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  
+  background-color: var(--accent-color);
+  border-radius: 15px;
+ 
+
+  height: 200px;
+  width: 900px;
+  max-width: 95%; /* Responsive width */
+
+  margin: auto;
+  margin-top: 30px;
+
+  padding: 15px;
+  gap: 10px;
+
+  position: relative;
+}
+
+.imageWrapper {
+  height: 100%;           /* Take up full available height inside padding */
+  width: auto;            /* Let width define itself */
+  display: flex;          /* Removes invisible space under images */
+}
+
+
+.offersImage{
+  height: 100%;
+  width: auto;
+  object-fit: contain;    /* Ensures the whole image is seen */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.offerText {
+  font-family: 'Macondo Swash Caps', cursive;
+  font-size: 32px;
+  color: var(--primary-color);
+  height: 100%;
+  width:  auto;
+  flex: 1; /* Allow text to take remaining space */
+}
+
+.offersMessage{
+    margin-bottom: 15px;
+}
+
+.offerButton {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #5e25a8 100%);
+  color: var(--white-color);
+  border: none;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 24px;
+  font-family: 'Macondo Swash Caps', cursive;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(48, 0, 107, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.offerButton::after {
+  content: '→';
+  transition: transform 0.3s ease;
+}
+
+.offerButton:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(48, 0, 107, 0.3);
+  background: linear-gradient(135deg, #5e25a8 0%, var(--primary-color) 100%);
+  color: var(--accent-color);
+}
+
+.offerButton:hover::after {
+  transform: translateX(5px);
+}
+
+.offerButton:active {
+  transform: translateY(0) scale(0.98);
+}
+
+
+.offersTerms{
+  font-size: 12px;
+  font-family: 'Times New Roman', Times, serif;
+
+  position: absolute;
+  bottom: 15px;
+  right: 15px; /* Align right on desktop */
+  left: auto;
+  text-align: right;
+  max-width: 60%;
+}
+
+.bottomSpace{
+  margin: 200px;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+  .offersContainer {
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .imageWrapper {
+    height: 150px;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  .offersImage {
+    width: auto;
+    height: 100%;
+  }
+
+  .offerText {
+    width: 100%;
+  }
+
+  .offerButton {
+    position: static; /* Remove absolute positioning */
+    margin: 15px auto;
+    width: fit-content;
+  }
+
+  .offersTerms {
+    position: static;
+    text-align: center;
+    max-width: 100%;
+    margin-top: 10px;
+  }
+  
+  .offersMessage {
+    font-size: 24px;
+  }
+}

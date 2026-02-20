@@ -1,0 +1,68 @@
+/* New Grid Layout for Flavours */
+.flavoursGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: 40px;
+  max-width: 1400px;
+  margin: 40px auto;
+  justify-items: center;
+}
+
+.flavourCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.flavourCard:hover {
+  transform: translateY(-5px);
+}
+
+/* Reusing existing styles but scoped or adjusted if needed */
+.flavoursImg {
+  width: 630px;
+  height: 360px;
+  border-radius: 20px;
+  outline: 5px solid var(--accent-color);
+  outline-offset: 3px;
+  object-fit: cover;
+  transition: all 0.4s ease;
+}
+
+.flavoursImg:hover {
+  width: 650px;
+  height: 380px;
+  cursor: pointer;
+  outline: 5px solid var(--primary-color);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.flavourName {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  margin: 0;
+  font-size: 24px;
+  font-family: 'Macondo Swash Caps', cursive; 
+  color: var(--accent-color);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.flavourCard:hover .flavourName {
+  color: var(--primary-color);
+  font-weight: 700;
+  transform: scale(1.05);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 700px) {
+  .flavoursGrid {
+    grid-template-columns: 1fr;
+  }
+  .flavoursImg {
+    width: 90%;
+    height: auto;
+  }
+}

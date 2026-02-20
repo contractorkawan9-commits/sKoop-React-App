@@ -1,0 +1,89 @@
+/* Scoped to the AboutUs page container */
+
+body{
+  background-color: var(--primary-color);
+}
+
+.brandFont{
+  font-family: 'Macondo Swash Caps', cursive;
+  font-size: 30px;
+}
+.aboutUsPage {
+  background-color: var(--primary-color);
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+  padding-top: 20px;
+  color: var(--white-color);
+}
+
+/* Reusing and adapting styles from aboutUs.css */
+
+.aboutUsPage p {
+  color: var(--white-color);
+  text-decoration: none;
+  margin: 0%;
+  line-height: 1.6;
+}
+
+.aboutCointainer1 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  gap: 60px;
+  min-height: 400px; 
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto; /* Centered */
+  padding: 0 20px;
+  overflow: visible; 
+}
+
+.aboutImageContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 500px;
+}
+
+/* Style for the Horizontal Line */
+.horizontalLine {
+  border: none; 
+  height: 4px;  
+  background-color: var(--accent-color); 
+  width: 100%;  
+  margin: 30px 0; /* consistent margin */
+  border-radius: 2px; 
+}
+
+/* Style for the Vertical Line */
+.vertical-line {
+  width: 4px;   
+  height: 614px; /* Fixed height might be an issue on responsive, consider min-height or auto */
+  background-color: var(--accent-color); 
+  border-radius: 2px;
+  margin-top: 10px; 
+}
+
+.aboutImage {
+  max-width: 600px;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Added shadow for depth */
+}
+
+.aboutText {
+  font-family: 'Roboto', sans-serif;
+  font-size: clamp(16px, 2.5vw, 24px);
+  color: var(--accent-color);
+  max-width: 600px;
+  width: 100%;      
+  height: auto;
+  text-align: justify;
+  margin: 0;
+  display: block;
+}
+
+.bottomSpace {
+  margin-bottom: 200px;
+}

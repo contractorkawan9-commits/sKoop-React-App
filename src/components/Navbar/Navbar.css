@@ -1,0 +1,89 @@
+/* Navigation Container */
+.navbarContainer {
+  /* Handles the offset for the fixed header */
+  padding-top: 140px; /* 120px header + 20px breathing room */
+  width: 100%;
+  background-color: transparent; /* Or match body background */
+}
+
+.navElements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px; /* Consistent spacing */
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.navItem {
+  font-size: 32px; /* Slightly refined base size */
+  font-family: 'Macondo Swash Caps', cursive;
+  color: white;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
+  position: relative;
+}
+
+.navItem:hover {
+  color: var(--accent-color);
+  
+  
+  transform: scale(1.15) translateY(-5px);
+  text-shadow: 0 5px 15px rgba(var(--primary-color-rgb), 0.2);
+}
+
+.navItem::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background-color: var(--primary-color);
+  transition: all 0.4s ease;
+  transform: translateX(-50%);
+}
+
+.navItem:hover::after {
+  width: 100%;
+}
+
+/* Divider Line */
+.hrBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.navDivider {
+  background-color: var(--accent-color);
+  height: 4px;
+  width: 60%; /* Use percentage or max-width */
+  max-width: 800px;
+  border: none;
+  border-radius: 2px; /* Soften edges */
+  margin: 0;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 900px) {
+  .navbarContainer {
+    padding-top: 240px; /* Push down further because header expands */
+  }
+}
+
+@media (max-width: 600px) {
+  .navElements {
+    gap: 20px;
+    flex-direction: column; /* Stack links vertically */
+  }
+  
+  .navItem {
+    font-size: 24px;
+  }
+  
+  .navDivider {
+    width: 80%;
+  }
+}

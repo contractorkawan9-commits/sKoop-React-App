@@ -1,0 +1,31 @@
+:root {
+  /* Primary Brand Colors */
+  --primary-color: #30006B; /* Deep purple/blue */
+  --primary-color-rgb: 48, 0, 107; /* RGB values for --primary-color */
+  --accent-color: goldenrod; /* Gold/yellow accent */
+  --accent-color-rgb: 218, 165, 32; /* RGB values for --accent-color */
+  --darker-primary-color: #3a0080; /* Darker shade of primary color */
+  --darker-primary-color-rgb: 58, 0, 128; /* RGB values for --darker-primary-color */
+  --darkest-primary-color: #1a0038; /* Darkest shade of primary color */
+  --darkest-primary-color-rgb: 26, 0, 56; /* RGB values for --darkest-primary-color */
+  --darker-accent-color: #b8860b; /* Darker shade of accent color */
+  --lighter-accent-color: #ffd700; /* Lighter shade of accent color */
+
+  /* Neutral Colors */
+  --white-color: white;
+  --light-gray: #f8f9fa;
+  --medium-gray: #666;
+  --dark-gray: #555;
+  --whitesmoke-color: whitesmoke;
+
+  /* Transparent Whites for Header */
+  --white-transparent-10: rgba(255, 255, 255, 0.1);
+  --white-transparent-15: rgba(255, 255, 255, 0.15);
+  --white-transparent-20: rgba(255, 255, 255, 0.2);
+  --white-transparent-40: rgba(255, 255, 255, 0.4);
+  --white-transparent-60: rgba(255, 255, 255, 0.6);
+
+  /* Alert/Error Colors */
+  --error-red: #ff4d4d;
+  --generic-red: red;
+}

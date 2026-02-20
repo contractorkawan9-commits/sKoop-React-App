@@ -1,0 +1,146 @@
+.searchPage {
+  min-height: 80vh;
+  padding-top: 10px; /* Account for fixed header */
+  padding-bottom: 80px;
+  background-color: var(--light-gray); /* Light background for contrast */
+}
+
+.searchHeader {
+
+/* ... existing styles ... */
+
+.bottomSpace {
+  height: 40px; /* Reduced from 100px */
+  flex-grow: 1; /* Pushes content down but collapses if not needed */
+}
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--primary-color);
+}
+
+.searchHeader h1 {
+  font-family: 'Macondo Swash Caps', cursive;
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.searchHeader p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: var(--medium-gray);
+}
+
+.searchResultsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.resultCard {
+  background: var(--white-color);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.resultCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(var(--primary-color), 0.15);
+}
+
+.resultImageWrapper {
+  height: 200px;
+  overflow: hidden;
+}
+
+.resultImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.resultCard:hover .resultImage {
+  transform: scale(1.05);
+}
+
+.resultContent {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.resultCategory {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.resultContent h3 {
+  font-family: 'Macondo Swash Caps', cursive;
+  color: var(--primary-color);
+  font-size: 24px;
+  margin: 0 0 10px 0;
+}
+
+.resultContent p {
+  font-family: 'Roboto', sans-serif;
+  color: var(--dark-gray);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.resultLink {
+  align-self: flex-start;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.resultLink:hover {
+  color: var(--primary-color);
+}
+
+.noResults {
+  text-align: center;
+  padding: 60px;
+  background: var(--white-color);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.backHomeBtn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 25px;
+  background: var(--accent-color);
+  color: var(--white-color);
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  transition: background 0.3s ease;
+}
+
+.backHomeBtn:hover {
+  background: #30006B;
+}
+
+.bottomSpace {
+  height: 100px;
+}
